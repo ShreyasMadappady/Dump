@@ -50,3 +50,36 @@ newSvgDocument.save()
 Remember to replace the example SVG content with the actual SVG data you want to store. Additionally, consider adjusting the schema based on your application's specific requirements.
 
 Make sure to handle validation, sanitization, and security measures when dealing with user-generated SVG content to prevent potential security risks like Cross-Site Scripting (XSS).
+
+
+import React, { useState } from 'react';
+
+const SvgContainer = () => {
+  const [hoveredSvg, setHoveredSvg] = useState(null);
+
+  const handleSvgHover = (index) => {
+    setHoveredSvg(index);
+  };
+
+  const svgList = Array.from({ length: 50 }, (_, index) => (
+    <svg
+      key={index}
+      width="50"
+      height="50"
+      onMouseOver={() => handleSvgHover(index)}
+      style={{
+        cursor: 'pointer',
+        margin: '5px',
+        transform: index === hoveredSvg ? 'translate(20px, 0)' : 'none',
+        transition: 'transform 0.3s ease-in-out',
+      }}
+    >
+      {/* Add your SVG content here */}
+      <circle cx="25" cy="25" r="20" fill="blue" />
+    </svg>
+  ));
+
+  return <div style={{ display: 'flex', flexWrap: 'wrap' }}>{svgList}</div>;
+};
+
+export default SvgContainer;
