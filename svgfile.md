@@ -1,4 +1,4 @@
-Certainly! To make the SVG animated using inline CSS and inline JavaScript, you can add attributes for animation within the `<svg>` tag. Here's a basic example with a rotation animation:
+Certainly! To make the SVG animated using inline CSS and inline JavaScript, you can add attributes for animation within the `<svg>` tag. Here's a basic example with a rotati
 
 ```html
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256" style="animation: rotate 3s linear infinite">
